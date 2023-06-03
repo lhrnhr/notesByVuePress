@@ -4,6 +4,7 @@ module.exports = {
   base:'/notesByVuePress/',
   title: 'Notes by lhr',
   head: [
+    ['link', { rel: 'icon', href: 'logo.png' }],
     ['meta', { name: 'keywords', content: 'vuePress,lhrNotes' }],
     ['meta', { name: 'author', content: 'lhr' }]
   ],
@@ -27,11 +28,11 @@ module.exports = {
     nav: [
       { text: '主页', link: '/' },
       {
-          text: 'vue及其相关',
+          text: 'Vue及其相关',
           items: [
-            { text: 'vue生态', items: [
-              { text: 'vuePress', link: '/about/' },
-              { text: 'vueCLI', link: '/about/' },
+            { text: 'Vue学习', items: [
+              { text: 'Vue基础', link: '/vue/vueBasic/basicConcepts.html' },
+              { text: 'Vue进阶', link: '/vue/vueHigh/basicConcepts.html' },
             ] },
             { text: 'Group2', items: [
               { text: '主页', link: '/' },
@@ -43,28 +44,28 @@ module.exports = {
         text: '毕设相关',
         items: [
           { text: '神经网络', items: [
-            { text: '基本概念', link: '/graduationDesign/network/basicConcepts.html' },
+            { text: '基本概念及相关论文', link: '/graduationDesign/network/' },
           ] },
           { text: '故障定位', items: [
-            { text: '基本概念', link: '/graduationDesign/faultLocation/basicConcepts.html' },
+            { text: '基本概念及相关论文', link: '/graduationDesign/faultLocation/' },
           ] }
         ]
-    },
-    {
-      text: '参考(各种)',
+      },
+      {
+      text: '参考网址',
       items: [
-        { text: '神经网络', items: [
-          { text: '基本概念', link: '/graduationDesign/network/basicConcepts.html' },
-        ] },
-        { text: '故障定位', items: [
-          { text: '基本概念', link: '/graduationDesign/faultLocation/basicConcepts.html' },
-        ] }
+          { text: 'HTML及CSS', link: '/graduationDesign/network/basicConcepts.html' },
+          { text: 'JavaScript', link: '/graduationDesign/faultLocation/basicConcepts.html' },
       ]
   },
       { text: 'GitHub', link: 'https://github.com/lhrnhr' },
     ],
     // 左边的侧边栏配置
     sidebar: {
+      "/vue/":[
+        'vueBasic/',
+        'vueHigh/'
+      ],
       "/graduationDesign/":[
         'network/',
         'faultLocation/'

@@ -13,6 +13,14 @@ sidebar: {
     },
 ```
 
+然后每页的左侧导航栏自动生成，在每个md文件中添加如下代码
+
+```javascript
+---
+sidebar: auto
+---
+```
+
 ## 时间更新配置
 
 首先安装moment
@@ -81,5 +89,19 @@ git commit -m 'deploy'
 git push -f git@github.com:lhrnhr/notesByVuePress.git master:gh-pages
 
 cd -
+```
+
+## 关于md文件中的路径问题
+
+### 1.图片的路径
+
+```html
+<img :src="$withBase('/assets/img/graduationDesign/faultLocation/framework.png')" alt="mixureSecure">
+```
+
+### 2.其他文章的路径
+
+```javascript
+[DeepLocalize Fault Localization for Deep Neural](/graduationDesign/faultLocation/paperOne.html
 ```
 
