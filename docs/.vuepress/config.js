@@ -1,6 +1,7 @@
 const moment = require('moment');
 
 module.exports = {
+  base:'/notesByVuePress/',
   title: 'Notes by lhr',
   head: [
     ['meta', { name: 'keywords', content: 'vuePress,lhrNotes' }],
@@ -49,7 +50,17 @@ module.exports = {
           ] }
         ]
     },
-      { text: '关于', link: '/about/' },
+    {
+      text: '参考(各种)',
+      items: [
+        { text: '神经网络', items: [
+          { text: '基本概念', link: '/graduationDesign/network/basicConcepts.html' },
+        ] },
+        { text: '故障定位', items: [
+          { text: '基本概念', link: '/graduationDesign/faultLocation/basicConcepts.html' },
+        ] }
+      ]
+  },
       { text: 'GitHub', link: 'https://github.com/lhrnhr' },
     ],
     // 左边的侧边栏配置
