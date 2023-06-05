@@ -28,15 +28,30 @@ module.exports = {
     nav: [
       { text: '主页', link: '/' },
       {
-          text: 'Vue及其相关',
+          text: '前端学习',
           items: [
             { text: 'Vue学习', items: [
-              { text: 'Vue基础', link: '/vue/vueBasic/basicConcepts.html' },
-              { text: 'Vue进阶', link: '/vue/vueHigh/basicConcepts.html' },
+              { text: 'Vue基础', link: '/vue/vueBasic/' },
+              { text: 'Vue进阶', link: '/vue/vueHigh/' },
             ] },
-            { text: 'Group2', items: [
-              { text: '主页', link: '/' },
-              { text: '关于', link: '/about/' },
+            { text: 'Node学习', items: [
+              { text: 'Node基础', link: '/node/nodeBasic/' },
+              { text: 'Node进阶', link: '/node/nodeHigh/' },
+            ] },
+            { text: '前端工程化', items: [
+              { text: '知识点', link: '/' }
+            ] },
+            { text: '数据结构与算法', items: [
+              { text: '知识点', link: '/' }
+            ] },
+            { text: '微前端 & 架构设计', items: [
+              { text: '知识点', link: '/' }
+            ] },
+            { text: '跨平台', items: [
+              { text: '知识点', link: '/' }
+            ] },
+            { text: '泛前端领域', items: [
+              { text: '知识点', link: '/' }
             ] }
           ]
       },
@@ -65,6 +80,10 @@ module.exports = {
       "/vue/":[
         'vueBasic/',
         'vueHigh/'
+      ],
+      "/node/":[
+        'nodeBasic/',
+        'nodeHigh/'
       ],
       "/graduationDesign/":[
         'network/',
