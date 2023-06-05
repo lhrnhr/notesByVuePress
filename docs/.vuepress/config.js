@@ -58,6 +58,7 @@ module.exports = {
       {
         text: '毕设相关',
         items: [
+          { text: '代码环境', link: '/graduationDesign/codeEnvironment/' },
           { text: '神经网络', items: [
             { text: '基本概念及相关论文', link: '/graduationDesign/network/' },
           ] },
@@ -86,6 +87,7 @@ module.exports = {
         'nodeHigh/'
       ],
       "/graduationDesign/":[
+        'codeEnvironment/',
         'network/',
         'faultLocation/'
       ]
