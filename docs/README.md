@@ -26,9 +26,3 @@ var foo = 'bar';
 // A highlighted block
 var foo = 'bar';
 ```
-# 笔记说明
-
-```javascript
-// A highlighted block
-var foo = 'bar';
-```
