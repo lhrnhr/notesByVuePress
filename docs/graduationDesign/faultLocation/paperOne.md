@@ -70,13 +70,17 @@ Keras提供了一组回调方法[23]，为开发人员提供有关培训过程�
 
 ## B.模型制备
 
-![image-20230510170508476](C:\Users\12250\AppData\Roaming\Typora\typora-user-images\image-20230510170508476.png)
-
 直接分析该深度学习程序是很困难的，因为DNN库提供了黑盒api，并且很难在训练期间跟踪重要的值。要使用我们的方法，开发人员要么编写额外的代码来在fit()函数中进行DNN训练，要么将代码重写为命令式形式。
 
 对于第二种方法，我们根据机器学习文献[25]-[27]和Keras文档[28]确定了Keras库API列表，这些API对于训练和实现这些API调用的模型/简化版本很重要。将探针插入到这些库模型中，以便分析可以观察dnn在训练过程中的内部行为。
 
 基于回调的动态跟踪收集方法是通过覆盖keras.callback .callback类来实现的。由于我们的工作重点是在训练阶段进行监控，因此我们覆盖了名为(on_train_batch_end(self, batch, logs=None))的方法。这个被重写的方法在每批训练之后调用算法1。要使用此方法，开发人员需要将此自定义回调函数作为参数传递给fit()函数。
+
+> 从 Keras 代码到 Imperative 程序的转换
+>
+> <img :src="$withBase('/assets/img/graduationDesign/faultLocation/paperOne/Table 1.png')" alt="表格1">
+>
+> 本表显示了从 Keras 代码转换到 Our 工具代码的所有更改。每一行中的颜色表示更改类型： 绿色 + 添加新行，红色 - 删除现有行
 
 第二种势在必行的方法，如左侧表1所示，为了构建训练模型，DNN程序通常从创建顺序模型(第4行)开始，然后添加所有层(第5-11行)和优化(第13行)，最后在第14-15行调用compile和fit。在右边，我们展示了使用库模型的命令式程序。首先，第1、2、7和10行没有改变。其次，第5、8和11行显示了Dense层的转换。在我们的代码中，我们为层添加了一个名称，例如，查看name =“FC1”，以便我们可以报告故障位于哪一层。我们在fit函数(第15行)中插入了仪表来观察模型变量。
 
@@ -103,6 +107,8 @@ Keras提供了一组回调方法[23]，为开发人员提供有关培训过程�
 
 ## E. DNN故障定位算法
 
+<img :src="$withBase('/assets/img/graduationDesign/faultLocation/paperOne/Algorithm 1.png')" alt="算法" width="60%">
+
 算法1给出了我们的DNN故障定位算法。
 
 在其核心，它通过在学习过程中插入分析和错误检查来增强DNN学习算法。它有三个目的:(1)确定深度学习程序是否包含错误;(2)报告故障位置，深度学习程序在哪个层、哪个阶段(前向传播和后向传播)存在bug;(3)上报失败信息，在迭代中，学习停止。它将训练数据集(包括输入和标注)、翻译后的命令式程序以及DNN参数(批大小和epoch)作为输入。如果发现了错误，则输出一条消息，包括错误的故障位置和失败信息.
@@ -111,7 +117,13 @@ Keras提供了一组回调方法[23]，为开发人员提供有关培训过程�
 
 在训练过程中，训练数据集被分成几个较小的批次。例如，如果模型有2000个训练样例，分为500批，则模型需要4次迭代才能完成一个epoch。第3行显示了批大小的划分。第4-29行对训练数据集中的每个批次运行。在第5-11行，算法对前进阶段进行动态分析，在第24-29行，对后退阶段进行分析。在我们的回调函数中，重写方法on_train_batch_end(self, batch, logs=None)将在每个批处理结束时执行，并在前/后阶段执行动态分析，在检索激活函数，loss, accuracy，更新权重和梯度之前/之后的每一层的值。
 
-1)前馈阶段:在第6行，算法在应用激活函数之前计算前馈层的输出。在第8行，我们在应用激活函数后计算输出。然后，我们调用ANA()过程来确定输出是否包含数值错误。如表2所示，EBA表示Error Before Activation, EAA表示Error After Activation, L表示故障层号。在第12行，我们计算损失，并且确定第13行是否有任何数字错误。如表2所示，ELF表示损失函数中的Error。如果这里没有检测到错误，我们将每次迭代的loss值保存在第14行。在第15行，我们计算精度，并检查16-18行的精度是否有数值错误。如果这里没有检测到错误，我们在第19行保存训练期间的准确度值。在第20-22行，算法检查丢失是否在很长一段时间内没有减少，准确性是否在增加。在这两种情况下，算法计算斜率来比较当前步骤的损失/精度与至少比当前步骤落后num步的步骤的损失/精度。在这种情况下，算法报告一条消息MDL，表明模型没有学习。否则，继续训练。
+1)前馈阶段:在第6行，算法在应用激活函数之前计算前馈层的输出。在第8行，我们在应用激活函数后计算输出。然后，我们调用ANA()过程来确定输出是否包含数值错误。在第12行，我们计算损失，并且确定第13行是否有任何数字错误。如果这里没有检测到错误，我们将每次迭代的loss值保存在第14行。在第15行，我们计算精度，并检查16-18行的精度是否有数值错误。如果这里没有检测到错误，我们在第19行保存训练期间的准确度值。在第20-22行，算法检查丢失是否在很长一段时间内没有减少，准确性是否在增加。在这两种情况下，算法计算斜率来比较当前步骤的损失/精度与至少比当前步骤落后num步的步骤的损失/精度。在这种情况下，算法报告一条消息MDL，表明模型没有学习。否则，继续训练。
+
+> <img :src="$withBase('/assets/img/graduationDesign/faultLocation/paperOne/Table 2.png')" alt="表2" width="60%">
+>
+> 如表2所示，EBA表示Error Before Activation, EAA表示Error After Activation, L表示故障层号。
+>
+> 如表2所示，ELF表示损失函数中的Error。
 
 2)反向传播阶段:在此阶段，算法收集每次迭代中每一层的权值和∆权值。在第25行，Weight和∆Weight是反向传播的输出。在第26行，算法调用ANA()过程并传递∆weight来检查是否有数值错误。如果∆权重有任何错误，算法将打印错误信息，并确定是哪一层导致了这个问题(第26行)。以同样的方式，在第27行，算法可以通过调用ANA()过程来确定每个层中的权重是否存在问题。如果过程确定权重存在问题，则算法将返回提示存在错误的消息.
 
@@ -123,13 +135,13 @@ Keras提供了一组回调方法[23]，为开发人员提供有关培训过程�
 
 在第11行，我们将平均值存储在列表中。最后，该过程将从列表中返回最后N个元素作为切片，以检查最后N次迭代的平均值是否改变。
 
-![image-20230515145248125](C:\Users\12250\AppData\Roaming\Typora\typora-user-images\image-20230515145248125.png)![image-20230515145228053](C:\Users\12250\AppData\Roaming\Typora\typora-user-images\image-20230515145228053.png)
+<img :src="$withBase('/assets/img/graduationDesign/faultLocation/paperOne/Function ANA.png')" alt="ANA函数" width="70%">
 
 从图2和图3中，我们可以观察到模型在每次迭代中继续学习平均值是否在变化。如果存在数值错误，此过程将返回true;否则，返回false。
 
-![image-20230515145338823](C:\Users\12250\AppData\Roaming\Typora\typora-user-images\image-20230515145338823.png)
+<img :src="$withBase('/assets/img/graduationDesign/faultLocation/paperOne/Figure 2.png')" alt="图2" width="47%">
 
-![image-20230515145425835](C:\Users\12250\AppData\Roaming\Typora\typora-user-images\image-20230515145425835.png)
+<img :src="$withBase('/assets/img/graduationDesign/faultLocation/paperOne/Figure 3.png')" alt="图3" width="50%">
 
 # §IV表示评估
 
@@ -158,8 +170,9 @@ Keras提供了一组回调方法[23]，为开发人员提供有关培训过程�
 
 这个过程包括三个步骤。首先，我们搜索所有Keras存储库。之后，我们挖掘标题包含上述Stack Overflow挖掘过程中使用的关键字的所有提交。然后，我们只取最后一个版本修复，并手动检查提交是否与结构错误相关，从这些提交中，我们导出故障位置和修复错误的补丁。在最后一步中，我们检查存储库是否提供了训练数据。因此，我们随机选择了11个具有训练数据集的可执行程序。
 
-
 例如，图4显示了我们为Stack Overflow post #[22]派生的补丁。表IV和表V给出了我们的基准，以及修复前后的参数总数、代码行数、损耗和精度。我们的工具和基准测试可以下载[21]。
+
+<img :src="$withBase('/assets/img/graduationDesign/faultLocation/paperOne/Figure 4.png')" alt="图4">
 
 
 表III显示了原始Keras代码和命令式代码在准确性、损耗和运行时方面的比较。在所有基准测试中，与Keras相比，我们的命令式代码具有相当的准确性和损失。这个小偏差是由于在Keras代码中应用了额外的优化。在运行时方面，在训练和测试阶段，我们的命令式代码的执行时间是Keras的5倍。这背后的原因是命令式代码为识别bug及其根源所做的额外工作。我们的代码还能够在发现错误时尽早终止，并且在稍后的结果中，我们表明我们可以比Keras回调方法更快地检测到错误。
@@ -170,17 +183,17 @@ Keras提供了一组回调方法[23]，为开发人员提供有关培训过程�
 
 表四:基准，我们显示(Post #) Stack Overflow的Post id，参数#，代码行，(Result Before Fix)应用补丁前的损失和精度，(Result After Fix)应用补丁后的损失和精度值
 
-![image-20230515151548484](C:\Users\12250\AppData\Roaming\Typora\typora-user-images\image-20230515151548484.png)
+<img :src="$withBase('/assets/img/graduationDesign/faultLocation/paperOne/Table 4.png')" alt="表4">
 
 表5:基准测试，我们显示(GH j Ref) GitHub存储库引用的参数数量，代码行(LOC)，(修复前的结果)应用补丁前的损失和精度值，以及(修复后的结果)应用补丁后的损失和精度
 
-![image-20230515151558177](C:\Users\12250\AppData\Roaming\Typora\typora-user-images\image-20230515151558177.png)
+<img :src="$withBase('/assets/img/graduationDesign/faultLocation/paperOne/Table 5.png')" alt="表5">
 
 在表VI和VII中，第一列分别报告了带有相应链接的Stack Overflow post#和GitHub存储库参考。为了将我们的结果与Keras方法生成的结果进行比较，我们列出了Time、Epoch、Iteration、IB和FL列，分别表示该方法查找错误所需的时间、报告错误的时间和迭代次数、该方法是否正确识别错误以及该方法是否成功报告错误的故障位置。在IB和FL中，X表示方法成功，X表示失败，并且–无法识别或故障
 
-![image-20230515152758793](C:\Users\12250\AppData\Roaming\Typora\typora-user-images\image-20230515152758793.png)
+<img :src="$withBase('/assets/img/graduationDesign/faultLocation/paperOne/Table 6.png')" alt="表6">
 
-![image-20230515152818123](C:\Users\12250\AppData\Roaming\Typora\typora-user-images\image-20230515152818123.png)
+<img :src="$withBase('/assets/img/graduationDesign/faultLocation/paperOne/Table 7.png')" alt="表7">
 
 结果表明，我们的工具能够识别出29个错误程序中的23个错误，我们的回调函数能够识别出40个错误程序中的34个错误。相比之下，TerminateOnNaN()， earlystopped (' loss ')， earlystopped (' accuracy ')和三个Keras方法一起能够分别识别40个错误中的2个，24个，28个和32个。这主要是因为与其他三种方法相比，我们的技术使用了更广泛的重要运行时值进行分析，而其他三种方法只使用一个度量，如损失或准确性。此外，早期停止(“损失”)和早期停止(“准确性”)有时不能很好地指示模型有问题。例如，深度神经网络可能会在某个值接近全局最小值的点上陷入局部最小值[40]。
 
@@ -200,7 +213,7 @@ Keras提供了一组回调方法[23]，为开发人员提供有关培训过程�
 
 我们还将我们的方法与三种Keras方法在故障定位方面进行了比较，我们发现三种Keras方法都无法确定根本原因。我们的工具能够确定29个程序中的19个程序的根本原因，我们的回调能够确定40个程序中的21个程序的根本原因。我们将我们的工具和回调方法的结果与我们为基准构建的基本事实进行了比较。我们的工具可以在29例中精确地确定19例导致错误的层或参数，我们的回调方法可以在40例中精确地确定21例。在其他模型中，该工具和回调方法报告了另一层的根本原因，因为训练过程是一个循环;一层的操作会影响相邻层。例如程序[46]，使用mean_absolute_error作为损失函数而不是mean_squared_error，使用SGD优化器而不是Adam优化器。我们的工具报告这个错误是EBW(反向传播中的权重错误)。No = 1。在程序[47]中，用户指定学习率= 0.1，而不是学习率= 0.001。我们的工具报告了EBA(激活前错误函数)，层。No = 2。
 
-![image-20230515151952483](C:\Users\12250\AppData\Roaming\Typora\typora-user-images\image-20230515151952483.png)
+<img :src="$withBase('/assets/img/graduationDesign/faultLocation/paperOne/Figure 5.png')" alt="图5">
 
 我们使用Stack Overflow (SOF)和GitHub (GH)基准测试来测量三个Keras方法、我们的工具和我们的回调函数的分析时间。使用SOF基准，TerminateOnNaN()， earlystop (' loss ')， earlystop (' accuracy ')，三个Keras方法一起，我们的回调方法和我们的工具在所有堆栈溢出(SOF)基准测试中分别平均耗时93.01,78.98,93.04,73.55,421.39和107.99秒。而在GH基准测试中，TerminateOnNaN()， earlystop (' loss ')， earlystop (' accuracy ')，三个Keras方法加在一起，我们的回调平均分别为451.52,310.57,171.22,172.02和2613.6秒。对于四个相应的工具，所有Stack Overflow (SOF)和GitHub (GH)基准测试的平均时间分别为191.6秒、142.67秒、114.54秒、100.63秒和1024.25秒。在图5中，我们绘制了平均时间，并显示，当损失值中存在NaN时，TerminateOnNaN()终止程序;在其他情况下，培训将继续进行。这就是为什么它比其他方法需要更长的时间。
 
@@ -219,6 +232,8 @@ Keras提供了一组回调方法[23]，为开发人员提供有关培训过程�
 # §V讨论对有效性的威胁
 
 我们主要关注可能影响评估和结果的工具的实现。为了最小化这种威胁，我们遵循Keras代码[70]，并仔细检查作者之间的实现，以减少将主要错误与我们针对Keras的工具进行比较的机会，如表3所示。
+
+<img :src="$withBase('/assets/img/graduationDesign/faultLocation/paperOne/Table 3.png')" alt="表3">
 
 
 我们的工具目前处理Keras库中常见的层/ api，包括:Dense, Dropout, MaxPooling2D, Conv2D和BatchNormalization。我们可能还无法处理与其他api相关的深度学习程序，例如ConvLSTM2D()， Conv3D()。

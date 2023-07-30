@@ -38,6 +38,10 @@ module.exports = {
               { text: 'Node基础', link: '/node/nodeBasic/' },
               { text: 'Node进阶', link: '/node/nodeHigh/' },
             ] },
+            { text: 'React Native学习', items: [
+              { text: 'React Native基础', link: '/reactNative/reactNativeBasic/' },
+              { text: 'React Native进阶', link: '/reactNative/reactNativeHigh/' },
+            ] },
             { text: '前端工程化', items: [
               { text: '知识点', link: '/' }
             ] },
@@ -85,6 +89,10 @@ module.exports = {
       "/node/":[
         'nodeBasic/',
         'nodeHigh/'
+      ],
+      "/reactNative/":[
+        'reactNativeBasic/',
+        'reactNativeHigh/'
       ],
       "/graduationDesign/":[
         'codeEnvironment/',

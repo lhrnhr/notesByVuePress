@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: 前端笔记
-tagline: vue | JavaScript | css
+tagline: vue | JavaScript | css | React
 actionText: 快速上手 →
 actionLink: /zh/guide/
 features:
@@ -15,14 +15,12 @@ footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 # 笔记说明
 
-```javascript
-// A highlighted block
-var foo = 'bar';
-```
+> 系统学习前端知识，由web端开发学习的Vue相关知识，转向学习React相关，需要进行App端的开发
 
-# 笔记说明
 
-```javascript
-// A highlighted block
-var foo = 'bar';
-```
+
+> 引用图片的格式：
+>
+> ```html
+> <img :src="$withBase('/assets/img/graduationDesign/codeEnvironment/1.png')" alt="pycharm项目构建">
+> ```

@@ -3,4 +3,4 @@
 主要是毕设的神经网络相关知识，主要包含的章节有神经网络基本概念、
 
 ## 基本概念
-
+[神经网络基本概念](/graduationDesign/network/basicConcepts.html "神经网络的基本概念")。
