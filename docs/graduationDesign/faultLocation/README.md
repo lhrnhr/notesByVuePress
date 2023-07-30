@@ -3,7 +3,7 @@
 主要是毕设的故障定位相关知识，主要包含的章节有故障定位基本概念、相关论文的阅读
 
 ## 基本概念
-[故障定位基本概念](/graduationDesign/faultLocation/basicConcepts.html "故障定位的基本概念")。
+[故障定位基本概念](/graduationDesign/faultLocation/basicConcepts.html "故障定位的基本概念")
 
 ## 论文1--[DeepLocalize Fault Localization for Deep Neural](/graduationDesign/faultLocation/paperOne.html "故障定位的第一篇论文")
 

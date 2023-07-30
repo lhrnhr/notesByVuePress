@@ -68,6 +68,9 @@ module.exports = {
           ] },
           { text: '故障定位', items: [
             { text: '基本概念及相关论文', link: '/graduationDesign/faultLocation/' },
+          ] },
+          { text: '论文研究', items: [
+            { text: '论文思路', link: '/graduationDesign/paperIdea/' },
           ] }
         ]
       },
@@ -97,7 +100,8 @@ module.exports = {
       "/graduationDesign/":[
         'codeEnvironment/',
         'network/',
-        'faultLocation/'
+        'faultLocation/',
+        'paperIdea'
       ]
     },
     smoothScroll: true
