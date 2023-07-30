@@ -101,7 +101,7 @@ module.exports = {
         'codeEnvironment/',
         'network/',
         'faultLocation/',
-        'paperIdea'
+        'paperIdea/'
       ]
     },
     smoothScroll: true
