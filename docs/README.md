@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: 前端笔记
+heroText: 笔记
 tagline: vue | JavaScript | css | React
 actionText: 快速上手 →
 actionLink: /zh/guide/
