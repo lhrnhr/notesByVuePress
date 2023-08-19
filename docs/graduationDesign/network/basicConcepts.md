@@ -49,7 +49,9 @@ sidebar: auto
 >
 > <img :src="$withBase('/assets/img/graduationDesign/network/数字识别模型的神经网络结构.png')" alt="数字识别模型的神经网络结构">
 
-### [4.神经网络原理&一个简单的神经网络模型搭建](https://blog.csdn.net/N2O_666/article/details/114299612 "基础例子")
+### [4.训练深度学习神经网络时如何选择损失函数](https://blog.csdn.net/Hanx09/article/details/107393370 "损失函数的选择")
 
+
+### [5.神经网络训练中的几个概念Epoch, Batch, Iteration](https://blog.csdn.net/qq_38597589/article/details/119299082 "神经网络训练中的几个概念Epoch, Batch, Iteration")
 
 
