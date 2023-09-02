@@ -9,3 +9,4 @@
 主要是执行DeepLocalize项目使用conda执行的相关指令
 
 <Test></Test>
+<Select></Select>

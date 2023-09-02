@@ -1,6 +1,13 @@
 <template>
-  <div>
-    <button class="btn-55" onclick="console.log('dsad')">按钮</button>
+  <div class="select_wrap" id="selectWrap">
+    <select v-model="list.selected" id="selectElem">
+			<option :value="value" :key="value" v-for="(text, value) in list.items">{{
+				text
+			}}</option>
+		</select>
+    <BR /><BR /> value={{ list.selected }} , text={{ list.items[list.selected] }}
+		<BR /><BR />
+		<button @click="list.selected = '3'">set to 3</button>
   </div>
 </template>
 
@@ -12,76 +19,99 @@ export default {
         { label: 'Option 1', value: 'option1' },
         { label: 'Option 2', value: 'option2' },
         { label: 'Option 3', value: 'option3' }
-      ]
+      ],
+      list: {
+				selected: '2',
+				items: {
+					'1': 'Apple',
+					'2': 'Banana',
+					'3': 'Cherry',
+				},
+			},
     };
   }
 };
 </script>
 <style>
-.btn-55,
-.btn-55 *,
-.btn-55 :after,
-.btn-55 :before,
-.btn-55:after,
-.btn-55:before {
-  border: 0 solid;
-  box-sizing: border-box;
+.select_wrap{
+  width:800px;
+  margin:30px auto;
 }
-.btn-55 {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: button;
-  background-color: #000;
-  background-image: none;
-  color: #fff;
-  cursor: pointer;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  font-size: 100%;
-  line-height: 1.5;
-  margin: 0;
-  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
-  padding: 0;
+.select_wrap dt{
+  float:left;
+  width:120px;
+  line-height:36px;
+  text-align:right;
+  font-size:14px;
 }
-.btn-55:disabled {
-  cursor: default;
+.select_wrap dd{
+  margin-left:130px;
+  line-height:36px;
 }
-.btn-55:-moz-focusring {
-  outline: auto;
+.select_wrap input[type=text],.select_wrap input[type=password]{
+  height:24px;
+  line-height:22px;
+  padding:0 5px;
+  border:1px solid #aaa;
+  border-radius:2px;
 }
-.btn-55 svg {
-  display: block;
-  vertical-align: middle;
+.select_wrap .btn{
+  padding:0 20px;
+  color:#fff;
+  cursor:pointer;
+  line-height:30px;
+  border:none;
+  margin-right:20px;
+  background:#108ee9;
 }
-.btn-55 [hidden] {
-  display: none;
+.select_container{
+  position:relative;
+  display:inline-block;
 }
-.btn-55 {
-  background: linear-gradient(90deg, blue, red);
-  border-radius: 999px;
-  box-sizing: border-box;
-  color: #000;
-  display: block;
-  font-weight: 900;
-  overflow: hidden;
-  padding: 1.8rem 5rem;
-  position: relative;
-  text-transform: uppercase;
+.input_container{
+  position:relative;
 }
-.btn-55 span {
-  background: #1e293b;
-  border-radius: 999px;
-  color: #fff;
-  display: grid;
-  inset: 5px;
-  place-items: center;
-  position: absolute;
-  transition: background 0.3s;
+.input_container::after{
+  content:"";
+  position:absolute;
+  top:15px;
+  right:8px;
+  display:inline-block; 
+  height:0px;
+  border:6px solid transparent;
+  border-top-color:#ccc;
+  pointer-events:none;
 }
-.btn-55:hover span {
-  background: none;
+.input_container input{
+  height:30px;
+  line-height:28px;
+  padding:0 5px;
+  border:1px solid #aaa;
+  border-radius:4px;
 }
-
-
+.input_container input:focus{
+  border-color:#129cff;
+  outline:none;
+  box-shadow:0 0 6px #65bfff;
+}
+.select_container ul{
+  position:absolute;
+  top:35px;
+  width:100%;
+  margin:0;
+  padding:0;
+  background:#fff;
+  border-radius:4px;
+  box-shadow:0 0px 5px #ccc;
+}
+.select_container li{
+  list-style:none;
+  font-size:12px;
+  line-height:30px;
+  padding:0 10px;
+  cursor:pointer;
+}
+.select_container li:hover,.select_container li.cur{
+  background:#dbf0ff;
+}
 </style>
-
