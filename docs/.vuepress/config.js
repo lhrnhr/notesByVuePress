@@ -41,21 +41,6 @@ module.exports = {
             { text: 'React Native学习', items: [
               { text: 'React Native基础', link: '/reactNative/reactNativeBasic/' },
               { text: 'React Native进阶', link: '/reactNative/reactNativeHigh/' },
-            ] },
-            { text: '前端工程化', items: [
-              { text: '知识点', link: '/' }
-            ] },
-            { text: '数据结构与算法', items: [
-              { text: '知识点', link: '/' }
-            ] },
-            { text: '微前端 & 架构设计', items: [
-              { text: '知识点', link: '/' }
-            ] },
-            { text: '跨平台', items: [
-              { text: '知识点', link: '/' }
-            ] },
-            { text: '泛前端领域', items: [
-              { text: '知识点', link: '/' }
             ] }
           ]
       },
@@ -75,10 +60,10 @@ module.exports = {
         ]
       },
       {
-      text: '参考网址',
+      text: '公务员考试',
       items: [
-          { text: 'HTML及CSS', link: '/graduationDesign/network/basicConcepts.html' },
-          { text: 'JavaScript', link: '/graduationDesign/faultLocation/basicConcepts.html' },
+          { text: '行测', link: '/examinationStudy/measurementTest/' },
+          { text: '申论', link: '/examinationStudy/essayTest/' },
       ]
   },
       { text: 'GitHub', link: 'https://github.com/lhrnhr' },
