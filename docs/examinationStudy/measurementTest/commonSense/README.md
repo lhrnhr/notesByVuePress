@@ -9,3 +9,5 @@ sidebar: auto
 ## 1.
 
 ## 2.
+
+<pictureChange></pictureChange>
