@@ -20,3 +20,5 @@ sidebar: auto
 
 ## 资料分析
 [资料分析](/examinationStudy/measurementTest/dataAnalysis/ "资料分析")
+
+<el-button></el-button>

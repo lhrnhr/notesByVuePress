@@ -11,7 +11,14 @@
     "deploy": "bash deploy.sh"
   },
   "dependencies": {
+    "element-ui": "^2.15.14",
     "moment": "^2.29.4",
-    "vue-template-compiler": "^2.7.14"
+    "vue": "^2.7.16",
+    "vue-template-compiler": "^2.7.14",
+    "vuepress-plugin-demo-container": "^0.2.0"
+  },
+  "devDependencies": {
+    "echarts": "^5.4.3",
+    "mermaid": "^10.7.0"
   }
 }

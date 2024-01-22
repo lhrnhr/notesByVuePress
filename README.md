@@ -10,6 +10,13 @@ git push -u origin main
 yarn docs:dev # npm run docs:dev
 yarn deploy  # 该指令完成GitHub的部署，注意使用git bash 
 
+# 切换镜像
+npm config set registry http://registry.npm.taobao.org/
+npm config set registry https://registry.npmjs.org/
+
+# 添加element-ui
+yarn add element-ui
+
 | 文件的相对路径     | 页面路由地址   |
 | ------------------ | -------------- |
 | `/README.md`       | `/`            |

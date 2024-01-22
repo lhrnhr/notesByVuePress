@@ -64,6 +64,9 @@ module.exports = {
       items: [
           { text: '行测', link: '/examinationStudy/measurementTest/' },
           { text: '申论', link: '/examinationStudy/essayTest/' },
+          { text: '时间线', items: [
+            { text: '2024年1月', link: '/examinationStudy/timeLine/' },
+          ] },
       ]
   },
       { text: 'GitHub', link: 'https://github.com/lhrnhr' },
