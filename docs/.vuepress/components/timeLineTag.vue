@@ -2,14 +2,14 @@
   <div>
 <div class="block">
   <el-timeline>
-    <el-timeline-item timestamp="2024/01/22" placement="top">
+    <el-timeline-item :timestamp="time" placement="top">
       <el-card>
-        <h4>更新 1月 22日</h4>
-        <p>lhr 提交于 2024/01/22 20:46</p>
+        <h4>更新 {{time}}</h4>
+        <p>{{name}} 提交 {{content}}</p>
       </el-card>
     </el-timeline-item>
   </el-timeline>
-  <el-progress :percentage="1">常识</el-progress>
+  <el-progress :percentage="percent">常识</el-progress>
 </div>
 
 
@@ -23,6 +23,20 @@ export default {
 			num: 1,
     };
   },
+  props:{
+   time:{
+      type: String
+   },
+   name:{
+      type: String
+   },
+   content:{
+      type: String
+   },
+   percent:{
+      type: Number
+   }
+},
    methods: {
       handleChange(value) {
         console.log(value);

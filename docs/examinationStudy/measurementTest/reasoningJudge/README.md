@@ -20,3 +20,6 @@ sidebar: auto
 
 
 ## 二.  [刘文超判断推理刷题本](https://www.bilibili.com/video/BV12t4115735/?spm_id_from=333.337.search-card.all.click&vd_source=9978ee19b8275eb2dd1ba355f79d4617 "哔哩哔哩教学视频")
+
+
+## 三. [个人判断推理错题集](/examinationStudy/measurementTest/reasoningJudge/个人判断推理错题集/ "判断推理-错题整理")

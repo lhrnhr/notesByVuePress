@@ -15,10 +15,11 @@ sidebar: auto
 ## 数量关系
 [数量关系](/examinationStudy/measurementTest/mathRelationship/ "数量")
 
-## 判断推理
-[判断推理](/examinationStudy/measurementTest/reasoningJudge/ "判断推理")
+## [判断推理](/examinationStudy/measurementTest/reasoningJudge/ "判断推理")
+
+这里面有看视频的笔记，
+
+也有错题集合，方便随时多看、多练、多记→ [判断推理错题](/examinationStudy/measurementTest/reasoningJudge/个人判断推理错题集/图形推理.html "判断推理错题")
 
 ## 资料分析
 [资料分析](/examinationStudy/measurementTest/dataAnalysis/ "资料分析")
-
-<el-button></el-button>
