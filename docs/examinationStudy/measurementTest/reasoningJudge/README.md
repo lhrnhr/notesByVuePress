@@ -11,11 +11,12 @@ sidebar: auto
 
 ### 2.[图形推理--样式规律和属性规律](/examinationStudy/measurementTest/reasoningJudge/刘文超判断推理/2.图形推理--样式规律和属性规律.html "图推-样式和属性")
 
-### 3.[图形推理--样式规律和属性规律](/examinationStudy/measurementTest/reasoningJudge/刘文超判断推理/3.图形推理--样式规律和属性规律.html "图推-样式和属性")
+### 3.[图形推理--属性规律和数学规律](/examinationStudy/measurementTest/reasoningJudge/刘文超判断推理/3.图形推理--属性规律和数学规律.html "图推-样式和属性")
 
 ### 4.[图形推理--数量规律](/examinationStudy/measurementTest/reasoningJudge/刘文超判断推理/4.图形推理--数量规律.html "图推-样式和属性")
 
 ### 5.[图形推理--数量规律和特殊规律](/examinationStudy/measurementTest/reasoningJudge/刘文超判断推理/5.图形推理--数量规律和特殊规律.html "图推-样式和属性")
+
 ### 6.[图形推理--空间重构](/examinationStudy/measurementTest/reasoningJudge/刘文超判断推理/6.图形推理--空间重构.html "图推-空间重构")
 
 
