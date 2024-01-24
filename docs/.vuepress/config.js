@@ -71,6 +71,7 @@ module.exports = {
           ] },
           { text: '学习小组', items: [
             { text: 'zyy', link: '/examinationStudy/studyGroup/zyy/' },
+            { text: 'zpy', link: '/examinationStudy/studyGroup/zpy/' },
           ] }
       ]
   },
