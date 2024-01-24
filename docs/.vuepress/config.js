@@ -65,8 +65,13 @@ module.exports = {
           { text: '行测', link: '/examinationStudy/measurementTest/' },
           { text: '申论', link: '/examinationStudy/essayTest/' },
           { text: '时间线', items: [
-            { text: '2024年1月', link: '/examinationStudy/timeLine/' },
+            { text: '2024年1月', link: '/examinationStudy/timeLine/January/' },
+            { text: '2024年2月', link: '/examinationStudy/timeLine/February/' },
+            { text: '2024年3月', link: '/examinationStudy/timeLine/March/' },
           ] },
+          { text: '学习小组', items: [
+            { text: 'zyy', link: '/examinationStudy/studyGroup/zyy/' },
+          ] }
       ]
   },
       { text: 'GitHub', link: 'https://github.com/lhrnhr' },
