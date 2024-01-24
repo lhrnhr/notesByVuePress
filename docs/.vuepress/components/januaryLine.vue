@@ -4,8 +4,11 @@
     <el-carousel-item key="1月22日">
       1月22日学习时长<el-rate v-model="value1" :colors="['#99A9BF', '#F7BA2A', '#FF9900']"></el-rate>
     </el-carousel-item>
-    <el-carousel-item key="1月22日">
+    <el-carousel-item key="1月23日">
       1月23日学习时长<el-rate v-model="value2" :colors="['#99A9BF', '#F7BA2A', '#FF9900']"></el-rate>
+    </el-carousel-item>
+    <el-carousel-item key="1月24日">
+      1月24日学习时长<el-rate v-model="value3" :colors="['#99A9BF', '#F7BA2A', '#FF9900']"></el-rate>
     </el-carousel-item>
   </el-carousel>
   </div>
@@ -16,7 +19,8 @@ export default {
   data() {
     return {
 			 value1: 5,
-			 value2: 5
+			 value2: 4,
+       value3: 5
     };
   },
    methods: {

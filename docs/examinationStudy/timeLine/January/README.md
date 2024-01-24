@@ -12,3 +12,6 @@ sidebar: auto
 ## [1月23日](/examinationStudy/timeLine/January/2024_01_23.html "1月23日")
 开始复习行测图形推理模块，看刘文超视频，总共24个视频，刚开始看第一个
 然后做了粉笔APP15道练习题，将错题整理在具体内容中
+
+## [1月24日](/examinationStudy/timeLine/January/2024_01_24.html "1月24日")
+累计看完两个视频
