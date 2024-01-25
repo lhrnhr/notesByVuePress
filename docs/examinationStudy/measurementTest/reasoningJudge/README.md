@@ -9,9 +9,9 @@ sidebar: auto
 ## 一.  [刘文超判断推理](https://www.bilibili.com/video/BV12t4115735/?spm_id_from=333.337.search-card.all.click&vd_source=9978ee19b8275eb2dd1ba355f79d4617 "哔哩哔哩教学视频")
 ### 1.[图形推理--位置规律](/examinationStudy/measurementTest/reasoningJudge/刘文超判断推理/1.图形推理--位置规律.html "图推-位置")
 
-### 2.[图形推理--样式规律和属性规律](/examinationStudy/measurementTest/reasoningJudge/刘文超判断推理/2.图形推理--样式规律和属性规律.html "图推-样式和属性")
+### 2.[图形推理--样式规律](/examinationStudy/measurementTest/reasoningJudge/刘文超判断推理/2.图形推理--样式规律.html "图推-样式")
 
-### 3.[图形推理--属性规律和数学规律](/examinationStudy/measurementTest/reasoningJudge/刘文超判断推理/3.图形推理--属性规律和数学规律.html "图推-样式和属性")
+### 3.[图形推理--属性规律](/examinationStudy/measurementTest/reasoningJudge/刘文超判断推理/3.图形推理--属性规律.html "图推-属性")
 
 ### 4.[图形推理--数量规律](/examinationStudy/measurementTest/reasoningJudge/刘文超判断推理/4.图形推理--数量规律.html "图推-样式和属性")
 
