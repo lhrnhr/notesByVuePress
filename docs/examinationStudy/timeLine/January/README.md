@@ -18,3 +18,6 @@ sidebar: auto
 
 ## [1月25日](/examinationStudy/timeLine/January/2024_01_25.html "1月25日")
 累计看完一个视频
+
+## [1月26日](/examinationStudy/timeLine/January/2024_01_26.html "1月26日")
+累计看完两个视频
