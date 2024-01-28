@@ -16,6 +16,12 @@
     <el-carousel-item key="1月26日">
       1月26日学习时长<el-rate v-model="value5" :colors="['#99A9BF', '#F7BA2A', '#FF9900']"></el-rate>
     </el-carousel-item>
+    <el-carousel-item key="1月27日">
+      1月27日学习时长<el-rate v-model="value6" :colors="['#99A9BF', '#F7BA2A', '#FF9900']"></el-rate>
+    </el-carousel-item>
+    <el-carousel-item key="1月28日">
+      1月28日学习时长<el-rate v-model="value7" :colors="['#99A9BF', '#F7BA2A', '#FF9900']"></el-rate>
+    </el-carousel-item>
   </el-carousel>
   </div>
 </template>
@@ -28,7 +34,9 @@ export default {
 			 value2: 4,
        value3: 5,
        value4: 3,
-       value5: 5
+       value5: 5,
+       value6: 5,
+       value7: 5
     };
   },
    methods: {
