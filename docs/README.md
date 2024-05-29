@@ -24,3 +24,4 @@ footer: LHR Licensed | Copyright © 2023-present
 > ```html
 > <img :src="$withBase('/assets/img/graduationDesign/codeEnvironment/1.png')" alt="pycharm项目构建">
 > ```
+

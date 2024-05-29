@@ -1,10 +1,12 @@
 const moment = require('moment');
-
 module.exports = {
   base:'/notesByVuePress/',
   title: 'Notes by lhr',
   head: [
     ['link', { rel: 'icon', href: 'logo.png' }],
+    ['link', { rel: 'stylesheet', href: '/styles/index.scss' }],
+    // { rel: 'stylesheet', href: '/styles/index.scss' },
+    // { rel: 'icon', href: 'logo.png' } 原来
     ['meta', { name: 'keywords', content: 'vuePress,lhrNotes' }],
     ['meta', { name: 'author', content: 'lhr' }]
   ],
@@ -69,13 +71,20 @@ module.exports = {
             { text: '2024年1月', link: '/examinationStudy/timeLine/January/' },
             { text: '2024年2月', link: '/examinationStudy/timeLine/February/' },
             { text: '2024年3月', link: '/examinationStudy/timeLine/March/' },
-          ] },
-          { text: '学习小组', items: [
-            { text: 'zyy', link: '/examinationStudy/studyGroup/zyy/' },
-            { text: 'zpy', link: '/examinationStudy/studyGroup/zpy/' },
           ] }
       ]
-  },
+      },
+      {
+        text: '剪辑技巧',
+        items: [
+          { text: 'AE', items: [
+            { text: 'AE笔记', link: '/editSkills/AENotes/' },
+          ] },
+          { text: 'PS', items: [
+            { text: 'PS笔记', link: '/editSkills/PSNotes/' },
+          ] }
+        ]
+      },
       { text: 'GitHub', link: 'https://github.com/lhrnhr' },
     ],
     // 左边的侧边栏配置
@@ -97,6 +106,10 @@ module.exports = {
         'network/',
         'faultLocation/',
         'paperIdea/'
+      ],
+      "/editSkills/":[
+        'AENotes/',
+        'PSNotes/'
       ]
     },
     smoothScroll: true
