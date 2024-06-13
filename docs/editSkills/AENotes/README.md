@@ -11,4 +11,6 @@ sidebar: auto
 ## 动态字幕
 [动态字幕](/editSkills/AENotes/动态字幕.html "动态字幕")
 
+## 成都西安游(技术练习)
+[成都西安游(技术练习)](/editSkills/AENotes/成都西安游.html "成都西安游(技术练习)")
 
