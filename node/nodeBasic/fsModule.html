@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>fs(file system)模块 | Notes by lhr</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="/notesByVuePress/styles/index.scss">
+    <meta name="description" content="">
+    <meta name="keywords" content="vuePress,lhrNotes">
+    <meta name="author" content="lhr">
+    
+    <link rel="preload" href="/notesByVuePress/assets/css/0.styles.d8e60c2b.css" as="style"><link rel="preload" href="/notesByVuePress/assets/js/app.50f3d6c8.js" as="script"><link rel="preload" href="/notesByVuePress/assets/js/2.430564f6.js" as="script"><link rel="preload" href="/notesByVuePress/assets/js/73.140b84bf.js" as="script"><link rel="prefetch" href="/notesByVuePress/assets/js/10.44c4ab4f.js"><link rel="prefetch" href="/notesByVuePress/assets/js/11.ac0a75f6.js"><link rel="prefetch" href="/notesByVuePress/assets/js/12.441d6de5.js"><link rel="prefetch" href="/notesByVuePress/assets/js/13.a9b6254c.js"><link rel="prefetch" href="/notesByVuePress/assets/js/14.c21d72b6.js"><link rel="prefetch" href="/notesByVuePress/assets/js/15.b48805db.js"><link rel="prefetch" href="/notesByVuePress/assets/js/16.4b217b50.js"><link rel="prefetch" href="/notesByVuePress/assets/js/17.43ae5fb3.js"><link rel="prefetch" href="/notesByVuePress/assets/js/18.fe112a02.js"><link rel="prefetch" href="/notesByVuePress/assets/js/19.73b82525.js"><link rel="prefetch" href="/notesByVuePress/assets/js/20.695d93e7.js"><link rel="prefetch" href="/notesByVuePress/assets/js/21.84151f8b.js"><link rel="prefetch" href="/notesByVuePress/assets/js/22.d12e8833.js"><link rel="prefetch" href="/notesByVuePress/assets/js/23.0e55bfb3.js"><link rel="prefetch" href="/notesByVuePress/assets/js/24.bfb8a2c6.js"><link rel="prefetch" href="/notesByVuePress/assets/js/25.843bcd32.js"><link rel="prefetch" href="/notesByVuePress/assets/js/26.37285926.js"><link rel="prefetch" href="/notesByVuePress/assets/js/27.385b04bc.js"><link rel="prefetch" href="/notesByVuePress/assets/js/28.660faf7b.js"><link rel="prefetch" href="/notesByVuePress/assets/js/29.a4a996ee.js"><link rel="prefetch" href="/notesByVuePress/assets/js/3.e2ed08b3.js"><link rel="prefetch" href="/notesByVuePress/assets/js/30.3f407e95.js"><link rel="prefetch" href="/notesByVuePress/assets/js/31.04bcc5b9.js"><link rel="prefetch" href="/notesByVuePress/assets/js/32.0593f02a.js"><link rel="prefetch" href="/notesByVuePress/assets/js/33.b5773306.js"><link rel="prefetch" href="/notesByVuePress/assets/js/34.6e04b42d.js"><link rel="prefetch" href="/notesByVuePress/assets/js/35.f099ea40.js"><link rel="prefetch" href="/notesByVuePress/assets/js/36.f95a8ccd.js"><link rel="prefetch" href="/notesByVuePress/assets/js/37.d4ce06d3.js"><link rel="prefetch" href="/notesByVuePress/assets/js/38.f34cecf7.js"><link rel="prefetch" href="/notesByVuePress/assets/js/39.88f0ae30.js"><link rel="prefetch" href="/notesByVuePress/assets/js/4.084c2059.js"><link rel="prefetch" href="/notesByVuePress/assets/js/40.e66618e5.js"><link rel="prefetch" href="/notesByVuePress/assets/js/41.9b76de59.js"><link rel="prefetch" href="/notesByVuePress/assets/js/42.5d9b7489.js"><link rel="prefetch" href="/notesByVuePress/assets/js/43.25e1dbe1.js"><link rel="prefetch" href="/notesByVuePress/assets/js/44.85d6ca31.js"><link rel="prefetch" href="/notesByVuePress/assets/js/45.cf8ba81d.js"><link rel="prefetch" href="/notesByVuePress/assets/js/46.0292c498.js"><link rel="prefetch" href="/notesByVuePress/assets/js/47.e4282fe2.js"><link rel="prefetch" href="/notesByVuePress/assets/js/48.76e904a2.js"><link rel="prefetch" href="/notesByVuePress/assets/js/49.9f59b9aa.js"><link rel="prefetch" href="/notesByVuePress/assets/js/5.d2c6058c.js"><link rel="prefetch" href="/notesByVuePress/assets/js/50.29756d5f.js"><link rel="prefetch" href="/notesByVuePress/assets/js/51.2f0b6b65.js"><link rel="prefetch" href="/notesByVuePress/assets/js/52.eb74ffb2.js"><link rel="prefetch" href="/notesByVuePress/assets/js/53.6f6d76a4.js"><link rel="prefetch" href="/notesByVuePress/assets/js/54.ee68854a.js"><link rel="prefetch" href="/notesByVuePress/assets/js/55.8b3b8575.js"><link rel="prefetch" href="/notesByVuePress/assets/js/56.3c584ad7.js"><link rel="prefetch" href="/notesByVuePress/assets/js/57.cfa222ca.js"><link rel="prefetch" href="/notesByVuePress/assets/js/58.dd24350c.js"><link rel="prefetch" href="/notesByVuePress/assets/js/59.b69d730a.js"><link rel="prefetch" href="/notesByVuePress/assets/js/6.f4f1c6aa.js"><link rel="prefetch" href="/notesByVuePress/assets/js/60.6064b6fc.js"><link rel="prefetch" href="/notesByVuePress/assets/js/61.056321cf.js"><link rel="prefetch" href="/notesByVuePress/assets/js/62.ac39c7c1.js"><link rel="prefetch" href="/notesByVuePress/assets/js/63.e0d126e1.js"><link rel="prefetch" href="/notesByVuePress/assets/js/64.de178daa.js"><link rel="prefetch" href="/notesByVuePress/assets/js/65.166d61c7.js"><link rel="prefetch" href="/notesByVuePress/assets/js/66.ddb898e7.js"><link rel="prefetch" href="/notesByVuePress/assets/js/67.96fb8027.js"><link rel="prefetch" href="/notesByVuePress/assets/js/68.7ad5d3ba.js"><link rel="prefetch" href="/notesByVuePress/assets/js/69.6db1c384.js"><link rel="prefetch" href="/notesByVuePress/assets/js/7.47017c46.js"><link rel="prefetch" href="/notesByVuePress/assets/js/70.1502c473.js"><link rel="prefetch" href="/notesByVuePress/assets/js/71.feb899be.js"><link rel="prefetch" href="/notesByVuePress/assets/js/72.34f4ec34.js"><link rel="prefetch" href="/notesByVuePress/assets/js/74.561b0221.js"><link rel="prefetch" href="/notesByVuePress/assets/js/75.66382ab2.js"><link rel="prefetch" href="/notesByVuePress/assets/js/76.b90f62d5.js"><link rel="prefetch" href="/notesByVuePress/assets/js/77.e7e9993f.js"><link rel="prefetch" href="/notesByVuePress/assets/js/78.b8364fd8.js"><link rel="prefetch" href="/notesByVuePress/assets/js/79.72a56c8e.js"><link rel="prefetch" href="/notesByVuePress/assets/js/8.b6824860.js"><link rel="prefetch" href="/notesByVuePress/assets/js/80.9b8cdbcd.js"><link rel="prefetch" href="/notesByVuePress/assets/js/81.76891392.js"><link rel="prefetch" href="/notesByVuePress/assets/js/82.529a3d0b.js"><link rel="prefetch" href="/notesByVuePress/assets/js/83.062e047e.js"><link rel="prefetch" href="/notesByVuePress/assets/js/9.d67cb37d.js">
+    <link rel="stylesheet" href="/notesByVuePress/assets/css/0.styles.d8e60c2b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notesByVuePress/" class="home-link router-link-active"><img src="/notesByVuePress/assets/img/logo.png" alt="Notes by lhr" class="logo"> <span class="site-name can-hide">Notes by lhr</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notesByVuePress/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Vue学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/vue/vueBasic/" class="nav-link">
+  Vue基础
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/vue/vueHigh/" class="nav-link">
+  Vue进阶
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Node学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/node/nodeBasic/" class="nav-link router-link-active">
+  Node基础
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/node/nodeHigh/" class="nav-link">
+  Node进阶
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React Native学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/reactNative/reactNativeBasic/" class="nav-link">
+  React Native基础
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/reactNative/reactNativeHigh/" class="nav-link">
+  React Native进阶
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="毕设相关" class="dropdown-title"><span class="title">毕设相关</span> <span class="arrow down"></span></button> <button type="button" aria-label="毕设相关" class="mobile-dropdown-title"><span class="title">毕设相关</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notesByVuePress/graduationDesign/codeEnvironment/" class="nav-link">
+  代码环境
+</a></li><li class="dropdown-item"><h4>
+          神经网络
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/graduationDesign/network/" class="nav-link">
+  基本概念及相关论文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          故障定位
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/graduationDesign/faultLocation/" class="nav-link">
+  基本概念及相关论文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          论文研究
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/graduationDesign/paperIdea/" class="nav-link">
+  论文思路
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="公务员考试" class="dropdown-title"><span class="title">公务员考试</span> <span class="arrow down"></span></button> <button type="button" aria-label="公务员考试" class="mobile-dropdown-title"><span class="title">公务员考试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notesByVuePress/examinationStudy/measurementTest/" class="nav-link">
+  行测
+</a></li><li class="dropdown-item"><!----> <a href="/notesByVuePress/examinationStudy/essayTest/" class="nav-link">
+  申论
+</a></li><li class="dropdown-item"><!----> <a href="/notesByVuePress/examinationStudy/timeLine/" class="nav-link">
+  时间线
+</a></li><li class="dropdown-item"><h4>
+          时间线
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/examinationStudy/timeLine/January/" class="nav-link">
+  2024年1月
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/examinationStudy/timeLine/February/" class="nav-link">
+  2024年2月
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/examinationStudy/timeLine/March/" class="nav-link">
+  2024年3月
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="剪辑技巧" class="dropdown-title"><span class="title">剪辑技巧</span> <span class="arrow down"></span></button> <button type="button" aria-label="剪辑技巧" class="mobile-dropdown-title"><span class="title">剪辑技巧</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          AE
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/editSkills/AENotes/" class="nav-link">
+  AE笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          PS
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/editSkills/PSNotes/" class="nav-link">
+  PS笔记
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/lhrnhr" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/notesByVuePress/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Vue学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/vue/vueBasic/" class="nav-link">
+  Vue基础
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/vue/vueHigh/" class="nav-link">
+  Vue进阶
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Node学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/node/nodeBasic/" class="nav-link router-link-active">
+  Node基础
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/node/nodeHigh/" class="nav-link">
+  Node进阶
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React Native学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/reactNative/reactNativeBasic/" class="nav-link">
+  React Native基础
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/reactNative/reactNativeHigh/" class="nav-link">
+  React Native进阶
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="毕设相关" class="dropdown-title"><span class="title">毕设相关</span> <span class="arrow down"></span></button> <button type="button" aria-label="毕设相关" class="mobile-dropdown-title"><span class="title">毕设相关</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notesByVuePress/graduationDesign/codeEnvironment/" class="nav-link">
+  代码环境
+</a></li><li class="dropdown-item"><h4>
+          神经网络
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/graduationDesign/network/" class="nav-link">
+  基本概念及相关论文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          故障定位
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/graduationDesign/faultLocation/" class="nav-link">
+  基本概念及相关论文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          论文研究
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/graduationDesign/paperIdea/" class="nav-link">
+  论文思路
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="公务员考试" class="dropdown-title"><span class="title">公务员考试</span> <span class="arrow down"></span></button> <button type="button" aria-label="公务员考试" class="mobile-dropdown-title"><span class="title">公务员考试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notesByVuePress/examinationStudy/measurementTest/" class="nav-link">
+  行测
+</a></li><li class="dropdown-item"><!----> <a href="/notesByVuePress/examinationStudy/essayTest/" class="nav-link">
+  申论
+</a></li><li class="dropdown-item"><!----> <a href="/notesByVuePress/examinationStudy/timeLine/" class="nav-link">
+  时间线
+</a></li><li class="dropdown-item"><h4>
+          时间线
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/examinationStudy/timeLine/January/" class="nav-link">
+  2024年1月
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/examinationStudy/timeLine/February/" class="nav-link">
+  2024年2月
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/examinationStudy/timeLine/March/" class="nav-link">
+  2024年3月
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="剪辑技巧" class="dropdown-title"><span class="title">剪辑技巧</span> <span class="arrow down"></span></button> <button type="button" aria-label="剪辑技巧" class="mobile-dropdown-title"><span class="title">剪辑技巧</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          AE
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/editSkills/AENotes/" class="nav-link">
+  AE笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          PS
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/editSkills/PSNotes/" class="nav-link">
+  PS笔记
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/lhrnhr" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>fs(file system)模块</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_0-基础" class="sidebar-link">0.基础</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_1-写入文件" class="sidebar-link">1.写入文件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_1-1-writefile异步写入" class="sidebar-link">1-1 writeFile异步写入</a></li><li class="sidebar-sub-header"><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_1-2-writefilesync同步写入" class="sidebar-link">1-2 writeFileSync同步写入</a></li><li class="sidebar-sub-header"><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_1-3-appendfile-appendfilesync追加写入" class="sidebar-link">1-3 appendFile/appendFileSync追加写入</a></li><li class="sidebar-sub-header"><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_1-4-createwritestream流式写入" class="sidebar-link">1-4 createWriteStream流式写入</a></li><li class="sidebar-sub-header"><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_1-5-写入文件的场景" class="sidebar-link">1-5 写入文件的场景</a></li></ul></li><li><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_2-文件读取" class="sidebar-link">2.文件读取</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_2-1-readfile异步读取" class="sidebar-link">2-1 readFile异步读取</a></li><li class="sidebar-sub-header"><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_2-2-readfilesync同步读取" class="sidebar-link">2-2 readFileSync同步读取</a></li><li class="sidebar-sub-header"><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_2-3-createreadstream流式读取" class="sidebar-link">2-3 createReadStream流式读取</a></li><li class="sidebar-sub-header"><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_2-4-读取文件应用场景" class="sidebar-link">2-4 读取文件应用场景</a></li></ul></li><li><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_3-文件移动与重命名" class="sidebar-link">3.文件移动与重命名</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_4-文件删除" class="sidebar-link">4.文件删除</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_5-文件夹操作" class="sidebar-link">5.文件夹操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_5-1mkdir创建文件夹" class="sidebar-link">5-1mkdir创建文件夹</a></li></ul></li><li><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_6-查看资源状态" class="sidebar-link">6.查看资源状态</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notesByVuePress/node/nodeBasic/fsModule.html#_7-相对路径问题" class="sidebar-link">7.相对路径问题</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="fs-file-system-模块"><a href="#fs-file-system-模块" class="header-anchor">#</a> fs(file system)模块</h1> <h2 id="_0-基础"><a href="#_0-基础" class="header-anchor">#</a> 0.基础</h2> <p>fs模块可以实现与硬盘的交互，例如文件的创建、删除、重命名、移动，还有文件内容的写入、读取，以及文件夹的相关操作</p> <h2 id="_1-写入文件"><a href="#_1-写入文件" class="header-anchor">#</a> 1.写入文件</h2> <h3 id="_1-1-writefile异步写入"><a href="#_1-1-writefile异步写入" class="header-anchor">#</a> 1-1 writeFile异步写入</h3> <p>语法:</p> <div class="language- extra-class"><pre class="language-text"><code>fs.writeFile(file,data[,options],callback)
+</code></pre></div><p>参数说明:</p> <ul><li>file 文件名</li> <li>data 待写入的数据</li> <li>options 选项设置(可选)</li> <li>callback 写入回调</li></ul> <h3 id="_1-2-writefilesync同步写入"><a href="#_1-2-writefilesync同步写入" class="header-anchor">#</a> 1-2 writeFileSync同步写入</h3> <h3 id="_1-3-appendfile-appendfilesync追加写入"><a href="#_1-3-appendfile-appendfilesync追加写入" class="header-anchor">#</a> 1-3 appendFile/appendFileSync追加写入</h3> <p>语法与writeFile完全相同</p> <h3 id="_1-4-createwritestream流式写入"><a href="#_1-4-createwritestream流式写入" class="header-anchor">#</a> 1-4 createWriteStream流式写入</h3> <p>语法:</p> <div class="language- extra-class"><pre class="language-text"><code>fs.createWriteStream(path[,options])
+</code></pre></div><p>参数说明:</p> <ul><li>path 文件路径</li> <li>options 选项设置(可选)</li></ul> <p>程序打开一个文件是需要消耗资源的，流式写入可以减少打开关闭文件的次数</p> <p>流式写入方式适用于大文件写入或者频繁写入的场景，writeFile适合于写入频率较低的场景</p> <h3 id="_1-5-写入文件的场景"><a href="#_1-5-写入文件的场景" class="header-anchor">#</a> 1-5 写入文件的场景</h3> <p>文件写入在计算机中是一个非常常见的操作，下面的场景都用到了文件写入</p> <ul><li>下载文件</li> <li>安装软件</li> <li>保存程序日志，如Git</li> <li>编辑器保存文件</li> <li>视频录制</li></ul> <blockquote><p>当需要<strong>持久化保持数据</strong>的时候，应该想到<strong>文件写入</strong></p></blockquote> <h2 id="_2-文件读取"><a href="#_2-文件读取" class="header-anchor">#</a> 2.文件读取</h2> <h3 id="_2-1-readfile异步读取"><a href="#_2-1-readfile异步读取" class="header-anchor">#</a> 2-1 readFile异步读取</h3> <p>语法:</p> <div class="language- extra-class"><pre class="language-text"><code>fs.readFile(path[,options],callback)
+</code></pre></div><p>参数说明:</p> <ul><li>path 文件路径</li> <li>options 选项设置(可选)</li> <li>callback 回调函数</li></ul> <h3 id="_2-2-readfilesync同步读取"><a href="#_2-2-readfilesync同步读取" class="header-anchor">#</a> 2-2 readFileSync同步读取</h3> <h3 id="_2-3-createreadstream流式读取"><a href="#_2-3-createreadstream流式读取" class="header-anchor">#</a> 2-3 createReadStream流式读取</h3> <p>语法:</p> <div class="language- extra-class"><pre class="language-text"><code>fs.createReadStream(path[,options])
+// 绑定data事件
+rs.on('data',chunk=&gt;{
+  console.log(chunk.length);
+})
+// end 可选事件
+rs.on('end',()=&gt;{
+  console.log('读取完成');
+})
+</code></pre></div><p>参数说明:</p> <ul><li>path 文件路径</li> <li>options 选项设置(可选)</li></ul> <h3 id="_2-4-读取文件应用场景"><a href="#_2-4-读取文件应用场景" class="header-anchor">#</a> 2-4 读取文件应用场景</h3> <p>电脑开机、程序运行、编辑器打开文件、查看图片、播放视频、播放音乐、Git查看日志、上传文件、查看聊天记录</p> <h2 id="_3-文件移动与重命名"><a href="#_3-文件移动与重命名" class="header-anchor">#</a> 3.文件移动与重命名</h2> <p>在Node.js中，可以使用rename或renameSync来移动或重命名文件或文件夹</p> <p>语法:</p> <div class="language- extra-class"><pre class="language-text"><code>fs.rename(oldPath,newPath,callback)
+fs.renameSync(oldPath,newPath)
+</code></pre></div><p>参数说明:</p> <ul><li>oldPath 文件当前的路径</li> <li>newPath 文件新的路径</li> <li>callback 操作后的回调</li></ul> <p>代码示例：</p> <div class="language- extra-class"><pre class="language-text"><code>fs.rename('./座右铭.txt','./论语/座右铭.txt'，(err)=&gt;{
+    if(err) throw err;
+    console.log('移动完成')
+})
+fs.renameSync('./座右铭.txt','./论语/座右铭.txt');
+</code></pre></div><h2 id="_4-文件删除"><a href="#_4-文件删除" class="header-anchor">#</a> 4.文件删除</h2> <p>在Node.js中，可以使用unlink或rm来删除文件或文件夹</p> <h2 id="_5-文件夹操作"><a href="#_5-文件夹操作" class="header-anchor">#</a> 5.文件夹操作</h2> <p>借助Node.js的能力，对文件夹进行创建、读取、删除等操作</p> <table><thead><tr><th>方法</th> <th>说明</th></tr></thead> <tbody><tr><td>mkdir/mkdirSync</td> <td>创建文件夹</td></tr> <tr><td>readdir/readdirSync</td> <td>读取文件夹</td></tr> <tr><td>rmdir/rmdirSync</td> <td>删除文件夹</td></tr></tbody></table> <h3 id="_5-1mkdir创建文件夹"><a href="#_5-1mkdir创建文件夹" class="header-anchor">#</a> 5-1mkdir创建文件夹</h3> <p>在Node.js中，可以使用mkdir或mkdirSync来创建文件夹</p> <p>语法:</p> <div class="language- extra-class"><pre class="language-text"><code>fs.mkdir(path[,options],callback)
+fs.mkdirSync(path[,options])
+</code></pre></div><p>参数说明:</p> <ul><li>path 文件路径</li> <li>options 选项配置(可选)</li> <li>callback 操作后的回调</li></ul> <p>代码示例：</p> <div class="language- extra-class"><pre class="language-text"><code>fs.mkdir('./page'，(err)=&gt;{
+    if(err) throw err;
+    console.log('创建完成')
+})
+</code></pre></div><h2 id="_6-查看资源状态"><a href="#_6-查看资源状态" class="header-anchor">#</a> 6.查看资源状态</h2> <p>在Node.js中，可以使用stat或statSync来创建文件夹</p> <p>语法:</p> <div class="language- extra-class"><pre class="language-text"><code>fs.stat(path[,options],callback)
+fs.statSync(path[,options])
+</code></pre></div><p>参数说明:</p> <ul><li>path 文件路径</li> <li>options 选项配置(可选)</li> <li>callback 操作后的回调</li></ul> <p>代码示例：</p> <div class="language- extra-class"><pre class="language-text"><code>// 异步获取状态
+fs.stat('./data.txt'，(err,data)=&gt;{
+    if(err) throw err;
+    console.log(data)
+})
+// 同步获取状态
+let data = fs.statSync('./data.txt')
+</code></pre></div><p>结果值对象结构：</p> <ul><li>size                         文件体积</li> <li>birthtime               创建时间</li> <li>mtime                    最后修改时间</li> <li>atime                      访问时间</li> <li>isFile                       检测是否为文件</li> <li>isDirectory            检测是否为文件夹</li></ul> <h2 id="_7-相对路径问题"><a href="#_7-相对路径问题" class="header-anchor">#</a> 7.相对路径问题</h2> <p>fs模块对资源进行操作时，路径的写法有两种：</p> <ul><li>相对路径</li></ul> <blockquote><p>代码中的路径是相对命令行操作目录</p> <p>eg：代码--fs.writeFileSync('./data.txt'，’love‘)</p> <p>命令行--D:\nodeJS\12-fs</p> <p>最终的data.txt'文件会创建在D:\nodeJS\12-fs下，而不是代码所在文件夹下</p></blockquote> <ul><li>绝对路径</li></ul> <blockquote><p>__dirname 保存的是所在文件的所在目录的绝对路径，不会随着工作目录的变化而变化</p></blockquote></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2023年6月5日星期一晚上6点19分</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/notesByVuePress/assets/js/app.50f3d6c8.js" defer></script><script src="/notesByVuePress/assets/js/2.430564f6.js" defer></script><script src="/notesByVuePress/assets/js/73.140b84bf.js" defer></script>
+  </body>
+</html>
