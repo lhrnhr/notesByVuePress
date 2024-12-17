@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>故障定位 | Notes by lhr</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="/notesByVuePress/styles/index.scss">
+    <meta name="description" content="">
+    <meta name="keywords" content="vuePress,lhrNotes">
+    <meta name="author" content="lhr">
+    
+    <link rel="preload" href="/notesByVuePress/assets/css/0.styles.3ef12f03.css" as="style"><link rel="preload" href="/notesByVuePress/assets/js/app.7a858e74.js" as="script"><link rel="preload" href="/notesByVuePress/assets/js/2.430564f6.js" as="script"><link rel="preload" href="/notesByVuePress/assets/js/60.218d949c.js" as="script"><link rel="prefetch" href="/notesByVuePress/assets/js/10.8440ff8c.js"><link rel="prefetch" href="/notesByVuePress/assets/js/11.0ee558cd.js"><link rel="prefetch" href="/notesByVuePress/assets/js/12.39b927f8.js"><link rel="prefetch" href="/notesByVuePress/assets/js/13.2a5f5c74.js"><link rel="prefetch" href="/notesByVuePress/assets/js/14.e5d984f0.js"><link rel="prefetch" href="/notesByVuePress/assets/js/15.5565cd93.js"><link rel="prefetch" href="/notesByVuePress/assets/js/16.0d14e63d.js"><link rel="prefetch" href="/notesByVuePress/assets/js/17.344f5191.js"><link rel="prefetch" href="/notesByVuePress/assets/js/18.bf977b9d.js"><link rel="prefetch" href="/notesByVuePress/assets/js/19.bb9fb378.js"><link rel="prefetch" href="/notesByVuePress/assets/js/20.e3e293d7.js"><link rel="prefetch" href="/notesByVuePress/assets/js/21.a96d90ae.js"><link rel="prefetch" href="/notesByVuePress/assets/js/22.cf18ea04.js"><link rel="prefetch" href="/notesByVuePress/assets/js/23.3be2f4bb.js"><link rel="prefetch" href="/notesByVuePress/assets/js/24.fd29e302.js"><link rel="prefetch" href="/notesByVuePress/assets/js/25.e29d873e.js"><link rel="prefetch" href="/notesByVuePress/assets/js/26.05f4f077.js"><link rel="prefetch" href="/notesByVuePress/assets/js/27.01c1ea6e.js"><link rel="prefetch" href="/notesByVuePress/assets/js/28.7bc72f62.js"><link rel="prefetch" href="/notesByVuePress/assets/js/29.d5eef810.js"><link rel="prefetch" href="/notesByVuePress/assets/js/3.fd4b4dbd.js"><link rel="prefetch" href="/notesByVuePress/assets/js/30.059d6cae.js"><link rel="prefetch" href="/notesByVuePress/assets/js/31.34636aed.js"><link rel="prefetch" href="/notesByVuePress/assets/js/32.ac5cf36e.js"><link rel="prefetch" href="/notesByVuePress/assets/js/33.c92b9747.js"><link rel="prefetch" href="/notesByVuePress/assets/js/34.423019dd.js"><link rel="prefetch" href="/notesByVuePress/assets/js/35.7d05f01c.js"><link rel="prefetch" href="/notesByVuePress/assets/js/36.508b4704.js"><link rel="prefetch" href="/notesByVuePress/assets/js/37.dd522b02.js"><link rel="prefetch" href="/notesByVuePress/assets/js/38.22e37791.js"><link rel="prefetch" href="/notesByVuePress/assets/js/39.bc9644af.js"><link rel="prefetch" href="/notesByVuePress/assets/js/4.084c2059.js"><link rel="prefetch" href="/notesByVuePress/assets/js/40.998c54be.js"><link rel="prefetch" href="/notesByVuePress/assets/js/41.1bb984aa.js"><link rel="prefetch" href="/notesByVuePress/assets/js/42.183e6db9.js"><link rel="prefetch" href="/notesByVuePress/assets/js/43.29de5e67.js"><link rel="prefetch" href="/notesByVuePress/assets/js/44.e441b714.js"><link rel="prefetch" href="/notesByVuePress/assets/js/45.ccde9171.js"><link rel="prefetch" href="/notesByVuePress/assets/js/46.1f864687.js"><link rel="prefetch" href="/notesByVuePress/assets/js/47.f212ff11.js"><link rel="prefetch" href="/notesByVuePress/assets/js/48.aae4b149.js"><link rel="prefetch" href="/notesByVuePress/assets/js/49.8a678a75.js"><link rel="prefetch" href="/notesByVuePress/assets/js/5.d2c6058c.js"><link rel="prefetch" href="/notesByVuePress/assets/js/50.ce189b38.js"><link rel="prefetch" href="/notesByVuePress/assets/js/51.e3279c9b.js"><link rel="prefetch" href="/notesByVuePress/assets/js/52.9844889b.js"><link rel="prefetch" href="/notesByVuePress/assets/js/53.2372d2e7.js"><link rel="prefetch" href="/notesByVuePress/assets/js/54.bf22e2e7.js"><link rel="prefetch" href="/notesByVuePress/assets/js/55.14ee88b9.js"><link rel="prefetch" href="/notesByVuePress/assets/js/56.55e19f29.js"><link rel="prefetch" href="/notesByVuePress/assets/js/57.374032d3.js"><link rel="prefetch" href="/notesByVuePress/assets/js/58.4650d0db.js"><link rel="prefetch" href="/notesByVuePress/assets/js/59.9c383026.js"><link rel="prefetch" href="/notesByVuePress/assets/js/6.bbea1d43.js"><link rel="prefetch" href="/notesByVuePress/assets/js/61.a1fb67e5.js"><link rel="prefetch" href="/notesByVuePress/assets/js/62.72ac5712.js"><link rel="prefetch" href="/notesByVuePress/assets/js/63.bd21be8a.js"><link rel="prefetch" href="/notesByVuePress/assets/js/64.2884e93c.js"><link rel="prefetch" href="/notesByVuePress/assets/js/65.b3409203.js"><link rel="prefetch" href="/notesByVuePress/assets/js/66.d7536918.js"><link rel="prefetch" href="/notesByVuePress/assets/js/67.fab264a4.js"><link rel="prefetch" href="/notesByVuePress/assets/js/68.3908a2d5.js"><link rel="prefetch" href="/notesByVuePress/assets/js/69.309b216f.js"><link rel="prefetch" href="/notesByVuePress/assets/js/7.5870fb6f.js"><link rel="prefetch" href="/notesByVuePress/assets/js/70.7bf8183f.js"><link rel="prefetch" href="/notesByVuePress/assets/js/71.4e482e30.js"><link rel="prefetch" href="/notesByVuePress/assets/js/72.d722ddec.js"><link rel="prefetch" href="/notesByVuePress/assets/js/73.71498413.js"><link rel="prefetch" href="/notesByVuePress/assets/js/74.8d6670ea.js"><link rel="prefetch" href="/notesByVuePress/assets/js/75.58767605.js"><link rel="prefetch" href="/notesByVuePress/assets/js/76.47f01692.js"><link rel="prefetch" href="/notesByVuePress/assets/js/77.83ae529a.js"><link rel="prefetch" href="/notesByVuePress/assets/js/78.cebcd9e3.js"><link rel="prefetch" href="/notesByVuePress/assets/js/79.913b4531.js"><link rel="prefetch" href="/notesByVuePress/assets/js/8.153689b6.js"><link rel="prefetch" href="/notesByVuePress/assets/js/80.53c30d90.js"><link rel="prefetch" href="/notesByVuePress/assets/js/81.3ca5fd0e.js"><link rel="prefetch" href="/notesByVuePress/assets/js/82.de292de7.js"><link rel="prefetch" href="/notesByVuePress/assets/js/83.43c11f08.js"><link rel="prefetch" href="/notesByVuePress/assets/js/84.43c5215e.js"><link rel="prefetch" href="/notesByVuePress/assets/js/9.4e05847e.js">
+    <link rel="stylesheet" href="/notesByVuePress/assets/css/0.styles.3ef12f03.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notesByVuePress/" class="home-link router-link-active"><img src="/notesByVuePress/assets/img/logo.png" alt="Notes by lhr" class="logo"> <span class="site-name can-hide">Notes by lhr</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notesByVuePress/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="相关链接" class="dropdown-title"><span class="title">相关链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="相关链接" class="mobile-dropdown-title"><span class="title">相关链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notesByVuePress/allLinks/others/" class="nav-link">
+  杂七杂八
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Vue学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/vue/vueBasic/" class="nav-link">
+  Vue基础
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/vue/vueHigh/" class="nav-link">
+  Vue进阶
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Node学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/node/nodeBasic/" class="nav-link">
+  Node基础
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/node/nodeHigh/" class="nav-link">
+  Node进阶
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React Native学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/reactNative/reactNativeBasic/" class="nav-link">
+  React Native基础
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/reactNative/reactNativeHigh/" class="nav-link">
+  React Native进阶
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="毕设相关" class="dropdown-title"><span class="title">毕设相关</span> <span class="arrow down"></span></button> <button type="button" aria-label="毕设相关" class="mobile-dropdown-title"><span class="title">毕设相关</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notesByVuePress/graduationDesign/codeEnvironment/" class="nav-link">
+  代码环境
+</a></li><li class="dropdown-item"><h4>
+          神经网络
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/graduationDesign/network/" class="nav-link">
+  基本概念及相关论文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          故障定位
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/graduationDesign/faultLocation/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  基本概念及相关论文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          论文研究
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/graduationDesign/paperIdea/" class="nav-link">
+  论文思路
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="公务员考试" class="dropdown-title"><span class="title">公务员考试</span> <span class="arrow down"></span></button> <button type="button" aria-label="公务员考试" class="mobile-dropdown-title"><span class="title">公务员考试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notesByVuePress/examinationStudy/measurementTest/" class="nav-link">
+  行测
+</a></li><li class="dropdown-item"><!----> <a href="/notesByVuePress/examinationStudy/essayTest/" class="nav-link">
+  申论
+</a></li><li class="dropdown-item"><!----> <a href="/notesByVuePress/examinationStudy/timeLine/" class="nav-link">
+  时间线
+</a></li><li class="dropdown-item"><h4>
+          时间线
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/examinationStudy/timeLine/January/" class="nav-link">
+  2024年1月
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/examinationStudy/timeLine/February/" class="nav-link">
+  2024年2月
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/examinationStudy/timeLine/March/" class="nav-link">
+  2024年3月
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="剪辑技巧" class="dropdown-title"><span class="title">剪辑技巧</span> <span class="arrow down"></span></button> <button type="button" aria-label="剪辑技巧" class="mobile-dropdown-title"><span class="title">剪辑技巧</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          AE
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/editSkills/AENotes/" class="nav-link">
+  AE笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          PS
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/editSkills/PSNotes/" class="nav-link">
+  PS笔记
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/lhrnhr" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/notesByVuePress/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="相关链接" class="dropdown-title"><span class="title">相关链接</span> <span class="arrow down"></span></button> <button type="button" aria-label="相关链接" class="mobile-dropdown-title"><span class="title">相关链接</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notesByVuePress/allLinks/others/" class="nav-link">
+  杂七杂八
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端学习" class="dropdown-title"><span class="title">前端学习</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端学习" class="mobile-dropdown-title"><span class="title">前端学习</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Vue学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/vue/vueBasic/" class="nav-link">
+  Vue基础
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/vue/vueHigh/" class="nav-link">
+  Vue进阶
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Node学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/node/nodeBasic/" class="nav-link">
+  Node基础
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/node/nodeHigh/" class="nav-link">
+  Node进阶
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React Native学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/reactNative/reactNativeBasic/" class="nav-link">
+  React Native基础
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/reactNative/reactNativeHigh/" class="nav-link">
+  React Native进阶
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="毕设相关" class="dropdown-title"><span class="title">毕设相关</span> <span class="arrow down"></span></button> <button type="button" aria-label="毕设相关" class="mobile-dropdown-title"><span class="title">毕设相关</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notesByVuePress/graduationDesign/codeEnvironment/" class="nav-link">
+  代码环境
+</a></li><li class="dropdown-item"><h4>
+          神经网络
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/graduationDesign/network/" class="nav-link">
+  基本概念及相关论文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          故障定位
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/graduationDesign/faultLocation/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  基本概念及相关论文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          论文研究
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/graduationDesign/paperIdea/" class="nav-link">
+  论文思路
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="公务员考试" class="dropdown-title"><span class="title">公务员考试</span> <span class="arrow down"></span></button> <button type="button" aria-label="公务员考试" class="mobile-dropdown-title"><span class="title">公务员考试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notesByVuePress/examinationStudy/measurementTest/" class="nav-link">
+  行测
+</a></li><li class="dropdown-item"><!----> <a href="/notesByVuePress/examinationStudy/essayTest/" class="nav-link">
+  申论
+</a></li><li class="dropdown-item"><!----> <a href="/notesByVuePress/examinationStudy/timeLine/" class="nav-link">
+  时间线
+</a></li><li class="dropdown-item"><h4>
+          时间线
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/examinationStudy/timeLine/January/" class="nav-link">
+  2024年1月
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/examinationStudy/timeLine/February/" class="nav-link">
+  2024年2月
+</a></li><li class="dropdown-subitem"><a href="/notesByVuePress/examinationStudy/timeLine/March/" class="nav-link">
+  2024年3月
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="剪辑技巧" class="dropdown-title"><span class="title">剪辑技巧</span> <span class="arrow down"></span></button> <button type="button" aria-label="剪辑技巧" class="mobile-dropdown-title"><span class="title">剪辑技巧</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          AE
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/editSkills/AENotes/" class="nav-link">
+  AE笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          PS
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notesByVuePress/editSkills/PSNotes/" class="nav-link">
+  PS笔记
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://github.com/lhrnhr" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/notesByVuePress/graduationDesign/codeEnvironment/" class="sidebar-link">代码环境</a></li><li><a href="/notesByVuePress/graduationDesign/network/" class="sidebar-link">神经网络</a></li><li><a href="/notesByVuePress/graduationDesign/faultLocation/" aria-current="page" class="active sidebar-link">故障定位</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notesByVuePress/graduationDesign/faultLocation/#基本概念" class="sidebar-link">基本概念</a></li><li class="sidebar-sub-header"><a href="/notesByVuePress/graduationDesign/faultLocation/#错误模型" class="sidebar-link">错误模型</a></li><li class="sidebar-sub-header"><a href="/notesByVuePress/graduationDesign/faultLocation/#论文1-deeplocalize-fault-localization-for-deep-neural" class="sidebar-link">论文1--DeepLocalize Fault Localization for Deep Neural</a></li><li class="sidebar-sub-header"><a href="/notesByVuePress/graduationDesign/faultLocation/#论文2-symbolic-execution-for-importance-analysis-and-adversarial-generation-in-neural-networks" class="sidebar-link">论文2--Symbolic Execution for Importance Analysis and Adversarial Generation in Neural Networks--第20个参考文献&quot;)</a></li><li class="sidebar-sub-header"><a href="/notesByVuePress/graduationDesign/faultLocation/#论文3-an-empirical-study-of-common-challenges-in-developing-deep-learning-applications" class="sidebar-link">论文3--An Empirical Study of Common Challenges in Developing Deep Learning Applications--第7个参考文献&quot;)</a></li><li class="sidebar-sub-header"><a href="/notesByVuePress/graduationDesign/faultLocation/#论文4-an-empirical-study-on-tensorflow-program-bugs∗" class="sidebar-link">论文4--An Empirical Study on TensorFlow Program Bugs∗--第8个参考文献&quot;)</a></li></ul></li><li><a href="/notesByVuePress/graduationDesign/paperIdea/" class="sidebar-link">论文研究</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="故障定位"><a href="#故障定位" class="header-anchor">#</a> 故障定位</h1> <p>主要是毕设的故障定位相关知识，主要包含的章节有故障定位基本概念、相关论文的阅读</p> <h2 id="基本概念"><a href="#基本概念" class="header-anchor">#</a> 基本概念</h2> <p><a href="/notesByVuePress/graduationDesign/faultLocation/basicConcepts.html" title="故障定位的基本概念">故障定位基本概念</a></p> <h2 id="错误模型"><a href="#错误模型" class="header-anchor">#</a> 错误模型</h2> <p><a href="/notesByVuePress/graduationDesign/faultLocation/faultModel.html" title="错误模型">错误模型</a></p> <h2 id="论文1-deeplocalize-fault-localization-for-deep-neural"><a href="#论文1-deeplocalize-fault-localization-for-deep-neural" class="header-anchor">#</a> 论文1--<a href="/notesByVuePress/graduationDesign/faultLocation/paperOne.html" title="故障定位的第一篇论文--源码论文">DeepLocalize Fault Localization for Deep Neural</a></h2> <p>深度神经网络(dnn)正在成为大多数软件系统不可或缺的一部分。之前的研究表明，深度神经网络存在缺陷。不幸的是，由于缺乏对模型行为的理解，现有的调试技术不支持定位DNN错误。整个DNN模型呈现为一个黑盒子。为了解决这些问题，我们提出了一种方法和工具，可以<strong>自动确定模型是否存在错误，并识别DNN错误的根本原因</strong>。我们的关键见解是，可以分析在<strong>层之间传播的值的历史趋势</strong>，以识别故障，并定位故障。为此，我们首先启用深度学习应用程序的动态分析:将其转换为<strong>命令式表示</strong>，或者使用<strong>回调机制</strong>。这两种机制都允许我们插入探针，当DNN在训练数据上进行训练时，可以对DNN产生的痕迹进行动态分析。然后，我们对轨迹进行动态分析，以识别导致错误的故障层或超参数。我们提出了一种识别根本原因的算法，该算法通过捕获任何数值误差和在训练过程中监测模型，并找到DNN结果上每个层/参数的相关性。</p> <h2 id="论文2-symbolic-execution-for-importance-analysis-and-adversarial-generation-in-neural-networks"><a href="#论文2-symbolic-execution-for-importance-analysis-and-adversarial-generation-in-neural-networks" class="header-anchor">#</a> 论文2--<a href="/notesByVuePress/graduationDesign/faultLocation/paperTwo.html" title="源码论文(论文1)--第20个参考文献">Symbolic Execution for Importance Analysis and Adversarial Generation in Neural Networks</a></h2> <p>深度神经网络(DNN)越来越多地应用于各种应用中，其中许多应用具有严重的安全性和安全性问题。本文描述了DeepCheck，这是一种基于程序分析(特别是符号执行)的核心思想来验证dnn的新方法。DeepCheck实现了DNN轻量级符号分析的新技术，并将其应用于解决DNN分析中的两个具有挑战性的问题:1)识别重要的输入特征，2)利用这些特征创建对抗性输入。使用MNIST图像分类网络和文本数据情感网络进行的实验结果表明，DeepCheck有望成为深度神经网络分析的一个有价值的工具。</p> <h2 id="论文3-an-empirical-study-of-common-challenges-in-developing-deep-learning-applications"><a href="#论文3-an-empirical-study-of-common-challenges-in-developing-deep-learning-applications" class="header-anchor">#</a> 论文3--<a href="/notesByVuePress/graduationDesign/faultLocation/paperThree.html" title="源码论文(论文1)--第7个参考文献">An Empirical Study of Common Challenges in Developing Deep Learning Applications</a></h2> <p>深度学习应用于许多智能系统和应用的创新，但在构建深度学习应用程序时通常面临哪些挑战，仍然没有得到充分的研究。为了寻找答案，本文对一个流行的问答网站Stack Overflow上的深度学习问题进行了<strong>大规模的实证研究</strong>。手动检查715个问题的样本，确定了<strong>7种常见问题</strong>，进一步建立一个分类模型来量化不同类型的深度学习问题在整个39628个深度学习问题集中的分布。发现程序崩溃、模型迁移和实现问题是最常被问到的<strong>三个问题</strong>。在仔细检查了这些问题的公认答案后，总结了可能值得研究界关注的<strong>五个主要根本原因</strong>，包括<strong>API滥用</strong>，<strong>不正确的超参数选择</strong>，<strong>GPU计算</strong>，<strong>静态图形计算</strong>以及<strong>有限的调试和分析支持</strong>。研究结果强调了对跨框架差分测试等新技术的需求，以提高深度学习中的软件开发效率和软件可靠性。</p> <h2 id="论文4-an-empirical-study-on-tensorflow-program-bugs∗"><a href="#论文4-an-empirical-study-on-tensorflow-program-bugs∗" class="header-anchor">#</a> 论文4--<a href="/notesByVuePress/graduationDesign/faultLocation/paperFour.html" title="源码论文(论文1)--第8个参考文献">An Empirical Study on TensorFlow Program Bugs∗</a></h2> <p>有缺陷的深度学习应用可能会导致灾难性的后果，虽然最近对深度学习应用的测试和调试进行了大量的研究，但深度学习缺陷的特征却从未被研究过。为填补所有这些差距，研究建立在TensorFlow之上的深度学习应用程序，并从StackOver Flow的QA页面和Github项目中收集了与TensorFlow相关的程序错误。从QA页面中提取信息、提交消息、提取请求消息并发布讨论，以检查这些bug的根本原因和症状。同时研究TensorFlow用户部署的错误检测和定位策略。这些发现有助于研究人员和TensorFlow用户更好地理解TensorFlow程序中的<strong>编码缺陷</strong>，并为未来的研究指明了新的方向</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">更新时间:</span> <span class="time">2024年1月22日星期一下午1点51分</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notesByVuePress/graduationDesign/network/" class="prev">
+        神经网络
+      </a></span> <span class="next"><a href="/notesByVuePress/graduationDesign/paperIdea/">
+        论文研究
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notesByVuePress/assets/js/app.7a858e74.js" defer></script><script src="/notesByVuePress/assets/js/2.430564f6.js" defer></script><script src="/notesByVuePress/assets/js/60.218d949c.js" defer></script>
+  </body>
+</html>
