@@ -30,6 +30,12 @@ module.exports = {
     nav: [
       { text: '主页', link: '/' },
       {
+        text: '相关链接',
+        items: [
+          { text: '杂七杂八', link: '/allLinks/others/' },
+          ]
+    },
+      {
           text: '前端学习',
           items: [
             { text: 'Vue学习', items: [
